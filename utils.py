@@ -40,7 +40,7 @@ class Color:
 		return Color(tuple(map(lambda x: x / value, (self.r, self.g, self.b))) + (self.a,))
 
 	def __truediv__(self, value):
-		return Color(tuple(map(lambda x: x / value, (self.r, self.g, self.b))) + (self.a,))
+		return self.__div__(value)
 
 	def __add__(self, other):
 		return Color((self.r + other.r, self.g + other.g, self.b + other.b, self.a))
