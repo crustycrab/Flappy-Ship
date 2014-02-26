@@ -1,5 +1,6 @@
 import math
 
+
 class Vector2():
 
 	def __init__(self, x=0, y=0):
@@ -25,3 +26,37 @@ class Vector2():
 
 	def __str__(self):
 		return str(self.x, self.y)
+
+
+class Color:
+
+	def __init__(self, color):
+		self.r, self.g, self.b, self.a = color
+
+	def __mul__(self, value):
+		return Color(tuple(map(lambda x: x * value, (self.r, self.g, self.b))) + (self.a,))
+
+	def __div__(self, value):
+		return Color(tuple(map(lambda x: x / value, (self.r, self.g, self.b))) + (self.a,))
+
+	def __truediv__(self, value):
+		return Color(tuple(map(lambda x: x / value, (self.r, self.g, self.b))) + (self.a,))
+
+	def __add__(self, other):
+		return Color((self.r + other.r, self.g + other.g, self.b + other.b, self.a))
+
+	def __sub__(self, other):
+		return Color((self.r - other.r, self.g - other.g, self.b - other.b, self.a))
+
+	def shuffle(self):
+		dr = self.r / 2
+		dg = self.g / 2
+		db = self.b / 2
+
+		return Color((random.uniform(self.r - dr, self.r + dr),
+					  random.uniform(self.g - dg, self.g + dg),
+					  random.uniform(self.b - db, self.b + db),
+					  self.a))
+
+	def raw(self):
+		return (self.r, self.g, self.b, self.a)
