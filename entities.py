@@ -112,7 +112,7 @@ def load_asteroids(game_objects, min_distance):
 	while start <= res.WIN_W * 3:
 		y = random.randint(res.WALL_HEIGHT + res.asteroid.height // 2, 
 			res.HALF_WIN_H - res.WALL_HEIGHT)
-		game_objects.append(Asteroid(x=start, y=y))
+		game_objects.append(Asteroid(x=start + random.randint(-40, 40), y=y))
 
 		y = y + res.ASTEROIDS_DISTANCE
 		game_objects.append(Asteroid(x=start, y=y))
