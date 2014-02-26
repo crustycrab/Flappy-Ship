@@ -23,7 +23,7 @@ dead_label = pyglet.text.Label(text='PRESS SPACE',
                                font_size=40,
                                bold=True,
                                anchor_x='center', anchor_y='center',
-                                                           x=res.HALF_WIN_W, y=res.HALF_WIN_H)
+                               x=res.HALF_WIN_W, y=res.HALF_WIN_H)
 
 
 background = graphics.Stars(256)
@@ -83,10 +83,9 @@ def on_key_press(symbol, modifiers):
     if symbol == key.ESCAPE:
         sys.exit()
 
-    if player_ship.dead:
-        if symbol == key.SPACE  \
-            or symbol == key.R:
-            reset()
+    if (symbol == key.SPACE and player_ship.dead) \
+        or symbol == key.R:
+        reset()
 
 def update(dt):
     background.update(dt)
