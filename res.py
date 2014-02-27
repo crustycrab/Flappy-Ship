@@ -36,10 +36,10 @@ boom = pyglet.image.ImageGrid(pyglet.resource.image('boom.png'), 1, 4)
 for image in boom:
     center_image(image)
 
-boom_animation = boom.get_animation(0.5, loop=False)
+boom_animation = boom.get_animation(0.1, loop=False)
 
 ship = pyglet.image.ImageGrid(pyglet.resource.image('tiny_ship.png'), 1, 2)
 for image in ship:
     center_image(image)
 
-ship_animation = ship.get_animation(0.5)
+ship_animation = ship.get_animation(0.25)

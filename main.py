@@ -91,7 +91,7 @@ def update(dt):
     background.update(dt)
 
     score = player_ship.score // 2
-    score_label.text = 'SCORE ' + str(score)
+    score_label.text = 'SCORE ' + str(score) 
     entities.load_asteroids(game_objects, max(200, 300 - score // 10))
 
     for obj in game_objects:
